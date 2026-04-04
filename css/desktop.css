@@ -1,0 +1,167 @@
+.desktop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.icons{
+    display: grid;
+    grid-template-columns: repeat(1, 90px);
+    gap: 30px;
+    padding: 25px 20px;
+    align-content: start;
+}
+
+.icons::after{
+    content: "";
+    position: absolute;
+    left: 90px;
+    top: 20px;
+    bottom: 20px;
+    width: 1px;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.icon{
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    align-items: center;
+}
+
+.icon::after{
+    content: attr(data-name);
+    position: absolute;
+    bottom: -20px;
+
+    font-size: 11px;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.icon:hover::after{
+    opacity: 1;
+}
+
+.icon:hover{
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-3px);
+}
+
+.icon span{
+    font-size: 42px;
+    line-height: 1;
+}
+
+.icon p{
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.icon:hover p{
+    color: #fff;
+}
+
+.icon:active{
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.windows{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.window{
+    top: 80px;
+    left: 120px;
+    pointer-events: auto;
+}
+
+#terminal { top: 180px; left: 450px; }
+#about { top: 210px; left: 450px; }
+#settings { top: 240px; left: 400px; }
+#game { top: 190px; left: 430px; }
+#projects { top: 200px; left: 440px; }
+#calendar { top: 230px; left: 480px; }
+
+.desktop{
+    background: 
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+                url("../assets/images/wallpaper.png") center/cover no-repeat;
+
+    /* background-blend-mode: screen, screen, normal, normal; */
+}
+
+.desktop::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(circle at 30% 40%, transparent 50%, rgba(0, 255, 159, 0.08));
+    pointer-events: none;
+}
+
+.team-name{
+    position: absolute;
+
+    top: 50%;
+    right: 90px;
+
+    transform: translateY(50%) rotate(-90deg) translateX(65%);
+    transform-origin: right center;
+
+    font-family: 'Audiowide', sans-serif;
+    font-size: 64px;
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    opacity: 0;
+
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+    0%{
+        text-shadow: 0 0 6px rgba(0,255,159,0.15);
+        opacity: 0.6;
+    }
+    50%{
+        text-shadow: 0 0 18px rgba(0,255,159,0.85);
+        opacity: 1;
+    }
+    100%{
+        text-shadow: 0 0 6px rgba(0,255,159,0.15);
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 768px){
+    .desktop{
+        padding: 15px;
+    }
+
+    .icons{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        justify-items: center;
+    }
+
+    .icon{
+        width: auto;
+    }
+
+    .window{
+        top: 0 !important;
+        left: 0 !important;
+    }
+}

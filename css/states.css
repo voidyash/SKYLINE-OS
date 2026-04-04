@@ -1,0 +1,62 @@
+.window{
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.window:target{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+#desktop:target ~ .desktop .window{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.window:target{
+    z-index: 50;
+}
+
+.terminal-ui input{
+    display: none;
+}
+
+.output{
+    display: none;
+}
+
+#cmd-help:checked ~ .terminal-output .help{
+    display: block;
+}
+
+#cmd-about:checked ~ .terminal-output .about{
+    display: block;
+}
+
+#cmd-projects:checked ~ .terminal-output .projects{
+    display: block;
+}
+
+.icon:active{
+    transform: scale(0.95);
+}
+
+.window:target ~ *{
+    pointer-events: none;
+}
+
+.window:target{
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .window {
+    transform: translateY(20px);
+  }
+
+  .window:target {
+    transform: translateY(0);
+  }
+}

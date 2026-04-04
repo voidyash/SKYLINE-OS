@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #0d0d0d;
+    color: #e5e5e5;
+}
+
+:root{
+    --bg-main: #0d0d0d;
+    --bg-window: #161616;
+    --bg-taskbar: rgba(20, 20, 20, 0.7);
+
+    --accent: #00ff9f;
+    --accent-soft: #00ff9f22;
+
+    --text-main: #e5e5e5;
+    --text-dim: #9a9a9a;
+
+    --border: #2a2a2a;
+}
+
+h1, h2, h3{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
+.titlebar span{
+    font-family: 'Saira Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+p{
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-main);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--border);
+    border-radius: 10px;
+}
+
+.desktop{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0d0d0d, #111);
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+.icon span{
+    font-size: 22px;
+}
+
+.icon p{
+    font-size: 12px;
+}
+
+.window{
+    position: absolute;
+    width: 500px;
+    height: 320px;
+    background: var(--bg-window);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.window:target{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.titlebar{
+    height: 35px;
+    background: #1c1c1c;
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+}
+
+.close{
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.content{
+    padding: 15px;
+    height: calc(100% - 35px);
+    overflow-y: auto;
+}
+
+.terminal-ui{
+    font-family: monospace;
+    color: var(--accent);
+}
+
+.terminal-ui p{
+    font-size: 13px;
+}
+
+.calendar-ui{
+    text-align: center;
+}
+
+.calendar-grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.calendar-grid span{
+    padding: 6px;
+    background: #1c1c1c;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.boot-screen{
+    position: fixed;
+    inset: 0;
+    background: #000;
+    color: #00ff9f;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: monospace;
+    z-index: 999;
+
+    animation: bootFade 3s ease forwards;
+}
+
+.boot-screen img{
+    width: 200px;
+    height: 200px;
+
+    border-radius: 70px;
+}
+
+.boot-screen h1{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.boot-screen p{
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.boot-screen p::after{
+    content: "...";
+    animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes bootFade{
+    0% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0; visibility: hidden;}
+}
+
+@keyframes dots{
+    0% {content: ".";}
+    33% {content: "..";}
+    66% {content: "...";}
+}
+
+@media (max-width: 768px){
+    .window{
+        width: 100%;
+        height: 100%;
+        top: 0 !important;
+        left: 0 !important;
+        border-radius: 0;
+    }
+}

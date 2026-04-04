@@ -1,0 +1,71 @@
+.taskbar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    height: 45px;
+    padding: 0 15px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+}
+
+.taskbar .left{
+    font-family: 'Saira Stencil', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+
+.taskbar .right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-main);
+}
+
+.time{
+    font-weight: 500;
+}
+
+.date{
+    color: var(--text-dim);
+}
+
+.taskbar span{
+    transition: opacity 0.2s ease;
+}
+
+.taskbar span:hover{
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+
+  .taskbar {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  .taskbar .left {
+    font-size: 14px;
+  }
+
+  .taskbar .right {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+}

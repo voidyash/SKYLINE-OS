@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline OS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/states.css">
+    <link rel="stylesheet" href="css/taskbar.css">
+    <link rel="stylesheet" href="css/windows.css">
+</head>
+<body>
+    <!-- STARTING ANIMATION -->
+    <div class="boot-screen">
+        <img src="assets/images/logo.png" alt="skyline logo">
+        <!-- <h1>Skyline OS</h1> -->
+        <p>Initializing System</p>
+    </div>
+
+    <!-- RESET -->
+    <div id="desktop"></div>
+
+    <main class="desktop">
+        <div class="team-name">THE VIBE CODERS</div>
+        <!-- ICONS FOR DESKTOP -->
+         <section class="icons">
+            <a href="#terminal" class="icon">
+                <span>🖥️</span>
+                <p>Terminal</p>
+            </a>
+            <a href="#about" class="icon">
+                <span>ℹ️</span>
+                <p>About</p>
+            </a>
+            <a href="#settings" class="icon">
+                <span>⚙️</span>
+                <p>Settings</p>
+            </a>
+            <a href="#projects" class="icon">
+                <span>📁</span>
+                <p>Projects</p>
+            </a>
+            <a href="#calendar" class="icon">
+                <span>🗓️</span>
+                <p>Calendar</p>
+            </a>
+            <a href="#game" class="icon">
+                <span>🕹️</span>
+                <p>Game</p>
+            </a>
+         </section>
+
+        <!-- WINDOWS -->
+          <section class="windows">
+            <div id="terminal" class="window">
+                <div class="titlebar">
+                    <span>terminal</span>
+                    <a href="#desktop" class="close">×</a>
+                </div>
+                <div class="content terminal-ui">
+                    <!-- COMMANDS -->
+                     <input type="radio" name="cmd" id="cmd-help" checked>
+                     <input type="radio" name="cmd" id="cmd-about">
+                     <input type="radio" name="cmd" id="cmd-projects">
+
+                     <div class="terminal-output">
+                        <p>Welcome to Skyline OS</p>
+                        <p>Select commands:</p>
+
+                        <label for="cmd-help">help</label>
+                        <label for="cmd-about">about</label>
+                        <label for="cmd-projects">projects</label>
+
+                        <div class="output help">
+                            <p>> available commands:</p>
+                            <p>- about</p>
+                            <p>- projects</p>
+                        </div>
+
+                        <div class="output about">
+                            <p>> Skyline OS 1.0</p>
+                            <p>> This project is made by THE VIBE CODERS</p>
+                        </div>
+
+                        <div class="output projects">
+                            <p>> Project list: </p>
+                            <p>- Skyline OS UI</p>
+                            <p>- interactive site</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <!-- ABOUT -->
+             <div id="about" class="window">
+                <div class="titlebar">
+                    <span>About System</span>
+                    <a href="#desktop" class="close">×</a>
+                </div>
+                <div class="content about-container">
+                    <h1 class="about-title">SKYLINE OS</h1>
+                    <p class="about-subtitle">Browser Based Operating System in HTML and CSS</p>
+
+                    <div class="about-section">
+                        <span class="label">Version</span>
+                        <p>v1.0</p>
+                    </div>
+                    <div class="about-section">
+                        <span class="label">Team</span>
+                        <p>Yash Barnwal <br>Sangita Ray <br>Arunima Saha <br>Akansha Das </p>
+                    </div>
+                </div>
+             </div>
+
+            <!-- SETTINGS -->
+             <div id="settings" class="window">
+                <div class="titlebar">
+                    <span>settings</span>
+                    <a href="#desktop" class="close">×</a>
+                </div>
+                <div class="content settings-container">
+                    <input type="radio" name="settings" id="home" checked>
+                    <input type="radio" name="settings" id="appearance">
+                    <input type="radio" name="settings" id="system">
+                    <input type="radio" name="settings" id="about-settings">
+                    <input type="radio" name="settings" id="storage">
+                    <input type="radio" name="settings" id="gaming">
+
+                    <div class="settings-sidebar">
+                        <label for="home">Home</label>
+                        <label for="appearance">Appearance</label>
+                        <label for="system">System</label>
+                        <label for="about-settings">About</label>
+                        <label for="storage">Storage</label>
+                        <label for="gaming">Gaming</label>
+                    </div>
+
+                    <div class="settings-main">
+                        <div class="panel home">
+                            <h2>HOME</h2>
+                            <p>Welcome to Skyline OS settings</p>
+                        </div>
+                        <div class="panel appearance">
+                            <h2>Appearance</h2>
+                            <p>Theme: Dark</p>
+                            <p>Accent:Neon Green</p>
+                        </div>
+                        <div class="panel system">
+                            <h2>System</h2>
+                            <p>Version 1.0</p>
+                            <p>Status: Stable</p>
+                        </div>
+                        <div class="panel about-settings">
+                            <h2>About</h2>
+                            <p>skyline OS built using HTML and CSS </p>
+                        </div>
+                        <div class="panel storage">
+                            <h2>Storage</h2>
+                            <p>Used: 120KB / 500KB</p>
+                        </div>
+                        <div class="panel gaming">
+                            <h2>Gaming</h2>
+                            <p>Performance Mode: On</p>
+                            <p>Game Bar: Disabled</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+            <!-- PROJECT -->
+             <div id="projects" class="window">
+                <div class="titlebar">
+                    <span>projects</span>
+                    <a href="#desktop" class="close">×</a>
+                </div>
+                <div class="projects-container">
+                    
+                    <h2 class="projects-title">PROJECT SHOWCASE</h2>
+
+                    <div class="project-list">
+                        <div class="project-card">
+                            <span class="icon">📁</span>
+                            <div>
+                                <h3>Real-Time Sports Analytics</h3>
+                                <p>Live scorecard system with animations</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <span class="icon">📁</span>
+                            <div>
+                                <h3>Unity Game</h3>
+                                <p>Endless Runner built with Unity</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <span class="icon">📁</span>
+                            <div>
+                                <h3>SKYLINE OS</h3>
+                                <p>Browser based OS using HTML/CSS</p>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <span class="icon">📁</span>
+                            <div>
+                                <h3>PHYSICS BASED WEBSITE NAME</h3>
+                                <p>Physics based website using HTML/CSS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            
+             <!-- CALENDAR -->
+              <div id="calendar" class="window">
+                <div class="titlebar">
+                    <span>calendar</span>
+                    <a href="#desktop" class="close">×</a>
+                </div>
+                <div class="content content-ui">
+                    <h3>April 2026</h3>
+
+                    <div class="calendar-grid">
+                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                        
+                        <span>29</span><span>30</span><span>31</span>
+                        <span>1</span><span>2</span><span>3</span><span>4</span>
+                        <span>5</span><span>6</span><span>7</span><span>8</span>
+                        <span>9</span><span>10</span><span>11</span><span>12</span>
+                        <span>13</span><span>14</span><span>15</span><span>16</span>
+                        <span>17</span><span>18</span><span>19</span><span>20</span>
+                        <span>21</span><span>22</span><span>23</span><span>24</span>
+                        <span>25</span><span>26</span><span>27</span><span>28</span>
+                        <span>29</span><span>30</span><span>1</span><span>2</span>
+                    </div>
+                </div>
+              </div>
+
+            <!-- GAME -->
+             <div id="game" class="window">
+                <div class="titlebar">
+                    <span>game</span>
+                    <a href="#desktop" class="close">×</a>
+                </div>
+                <div class="content">
+                    <p>Mini game coming here (CSS & HTML based)</p>
+                </div>
+             </div>
+            
+          </section>
+
+        <!-- TASKBAR -->
+          <footer class="taskbar">
+            <div class="left">SKYLINE OS</div>
+
+            <!-- STATIC CLOCK -->
+             <span class="time">12:45</span>
+             <span class="date">Apr 3 2026</span>
+          </footer>
+    </main>
+</body>
+</html>
