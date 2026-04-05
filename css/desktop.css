@@ -89,7 +89,6 @@
 #terminal { top: 180px; left: 450px; }
 #about { top: 210px; left: 450px; }
 #settings { top: 240px; left: 400px; }
-#game { top: 190px; left: 430px; }
 #projects { top: 200px; left: 440px; }
 #calendar { top: 230px; left: 480px; }
 
@@ -120,7 +119,7 @@
     transform-origin: right center;
 
     font-family: 'Audiowide', sans-serif;
-    font-size: 64px;
+    font-size: 58px;
     letter-spacing: 3px;
 
     color: rgba(255, 255, 255, 0.8);

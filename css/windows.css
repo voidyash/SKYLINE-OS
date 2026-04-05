@@ -308,14 +308,6 @@
     background: var(--accent-soft);
 }
 
-#game .content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-dim);
-    font-size: 14px;
-}
-
 @keyframes blink{
     0%, 50%, 100% { opacity: 1; }
     25%, 75% { opacity: 0; }
